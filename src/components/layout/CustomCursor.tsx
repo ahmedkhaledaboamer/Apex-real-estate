@@ -35,25 +35,33 @@ export function CustomCursor() {
     let shown = false
     let raf = 0
 
+    // The ring eases toward the pointer; the loop only runs while it is catching up,
+    // so an idle mouse costs nothing per frame (important while scrolling).
     const loop = () => {
       rx += (x - rx) * 0.2
       ry += (y - ry) * 0.2
-      r.style.transform = `translate3d(${rx}px, ${ry}px, 0)`
-      raf = requestAnimationFrame(loop)
+      if (Math.abs(x - rx) < 0.1 && Math.abs(y - ry) < 0.1) {
+        rx = x
+        ry = y
+        raf = 0
+      } else {
+        raf = requestAnimationFrame(loop)
+      }
+      r.style.translate = `${rx}px ${ry}px`
     }
-    raf = requestAnimationFrame(loop)
 
     const move = (e: PointerEvent) => {
       if (e.pointerType !== 'mouse') return
       x = e.clientX
       y = e.clientY
-      d.style.transform = `translate3d(${x}px, ${y}px, 0)`
+      d.style.translate = `${x}px ${y}px`
       if (!shown) {
         shown = true
         rx = x
         ry = y
         root.classList.add('cursor-visible')
       }
+      if (!raf) raf = requestAnimationFrame(loop)
       const t = e.target as Element | null
       const onText = !!t?.closest?.(TEXT)
       root.classList.toggle('cursor-on-text', onText)

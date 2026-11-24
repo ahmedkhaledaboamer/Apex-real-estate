@@ -107,7 +107,7 @@ export function Header({ currency, onCurrencyChange, lang, onLangChange, favorit
         onMouseLeave={leave}
         className={`relative border-b transition-[background-color,border-color,box-shadow] duration-200 ${
           scrolled || open
-            ? 'border-line/70 bg-paper/80 shadow-soft backdrop-blur-xl'
+            ? 'border-line/70 bg-paper/95 shadow-soft backdrop-blur-md'
             : 'border-transparent bg-paper'
         }`}
       >

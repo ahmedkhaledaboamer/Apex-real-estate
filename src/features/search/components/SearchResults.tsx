@@ -97,7 +97,7 @@ export function SearchResults({ scope }: { scope: SearchScope }) {
   return (
     <>
       {/* Sticky filter bar (sits under the 108px site header) */}
-      <div className="sticky top-[108px] z-30 border-b border-line/70 bg-paper/90 backdrop-blur-xl">
+      <div className="sticky top-[108px] z-30 border-b border-line/70 bg-paper/95 backdrop-blur-md">
         <Container className="py-3">
           <div className="hidden lg:block">
             <FilterFields scope={scope} filters={filters} setFilters={setFilters} layout="bar" />

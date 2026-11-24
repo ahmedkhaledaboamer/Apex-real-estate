@@ -11,7 +11,6 @@ import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
 import { Preloader } from '@/components/layout/Preloader'
 import { ScrollProgress } from '@/components/layout/ScrollProgress'
-import { SmoothScroll } from '@/components/layout/SmoothScroll'
 import { ButtonLink } from '@/components/ui/Button'
 import { Container } from '@/components/ui/misc'
 import { CompareBar } from '@/features/favorites/components/CompareBar'
@@ -64,12 +63,18 @@ const loadMotionFeatures = () =>
     else window.addEventListener('load', idle, { once: true })
   }).then(() => import('@/lib/motionFeatures').then((r) => r.default))
 
+const PRELOADER_ONCE =
+  "try{if(sessionStorage.getItem('aa-seen'))document.documentElement.classList.add('no-preloader');else sessionStorage.setItem('aa-seen','1')}catch(e){}"
+
 /** The HTML document (rendered on the server at build time, then hydrated). */
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    // suppressHydrationWarning: the inline script below may add a class to <html> before React hydrates.
+    <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        {/* Show the preloader only on the first page view of a session. */}
+        <script dangerouslySetInnerHTML={{ __html: PRELOADER_ONCE }} />
       </head>
       <body>
         <Preloader />
@@ -114,7 +119,6 @@ function RootLayout() {
       <FloatingExtras showCookieBanner={showCookieBanner} />
       <CompareBar />
       <ScrollProgress />
-      <SmoothScroll />
       <CustomCursor />
     </div>
   )

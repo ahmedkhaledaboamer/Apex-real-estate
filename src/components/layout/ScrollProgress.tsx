@@ -1,58 +1,70 @@
 import { ArrowUp } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 const R = 22
 const C = 2 * Math.PI * R
 
-type LenisLike = { scrollTo: (target: number, opts?: { duration?: number }) => void }
-
 /**
  * Floating "back to top" button with a circular progress ring and the scrolled percentage.
- * Appears after the first screen; hover/focus swaps the percentage for an arrow.
- * Sits above the WhatsApp button. Uses Lenis' eased scroll when it is active.
- * Renders nothing on the server/hydration pass (state starts hidden).
+ * Appears after the first screen; hover/focus swaps the percentage for an arrow. Sits above WhatsApp.
+ *
+ * Performance: scroll updates write straight to the DOM once per animation frame (no React
+ * re-render while scrolling), and only when the value actually changed.
  */
 export function ScrollProgress() {
-  const [visible, setVisible] = useState(false)
-  const [pct, setPct] = useState(0)
-  const raf = useRef(0)
+  const btn = useRef<HTMLButtonElement>(null)
+  const ring = useRef<SVGCircleElement>(null)
+  const label = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
+    let frame = 0
+    let lastPct = -1
+    let lastVisible: boolean | null = null
+
     const update = () => {
-      raf.current = 0
-      const doc = document.documentElement
-      const max = doc.scrollHeight - window.innerHeight
+      frame = 0
+      const max = document.documentElement.scrollHeight - window.innerHeight
       const y = window.scrollY
-      setPct(max > 0 ? Math.min(100, Math.max(0, Math.round((y / max) * 100))) : 0)
-      setVisible(y > window.innerHeight * 0.6)
+      const pct = max > 0 ? Math.min(100, Math.max(0, Math.round((y / max) * 100))) : 0
+      const visible = y > window.innerHeight * 0.6
+
+      if (pct !== lastPct) {
+        lastPct = pct
+        if (ring.current) ring.current.style.strokeDashoffset = String(C * (1 - pct / 100))
+        if (label.current) label.current.textContent = `${pct}%`
+        btn.current?.setAttribute('aria-label', `Back to top (${pct}% scrolled)`)
+      }
+      if (visible !== lastVisible && btn.current) {
+        lastVisible = visible
+        btn.current.dataset.visible = String(visible)
+        btn.current.tabIndex = visible ? 0 : -1
+      }
     }
     const onScroll = () => {
-      if (!raf.current) raf.current = requestAnimationFrame(update)
+      if (!frame) frame = requestAnimationFrame(update)
     }
+    update()
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onScroll, { passive: true })
     return () => {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', onScroll)
-      cancelAnimationFrame(raf.current)
+      cancelAnimationFrame(frame)
     }
   }, [])
 
-  const toTop = () => {
-    const lenis = (window as Window & { __lenis?: LenisLike }).__lenis
-    if (lenis) lenis.scrollTo(0, { duration: 1.2 })
-    else window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
-  }
+  const toTop = () =>
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
 
   return (
     <button
+      ref={btn}
       type="button"
       onClick={toTop}
-      aria-label={`Back to top (${pct}% scrolled)`}
-      tabIndex={visible ? 0 : -1}
-      className={`group fixed end-[26px] bottom-[100px] z-40 grid size-[52px] place-items-center rounded-full bg-white/95 shadow-lift backdrop-blur transition-[opacity,translate,scale] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-105 active:scale-95 print:hidden ${
-        visible ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-3 opacity-0'
-      }`}
+      aria-label="Back to top"
+      tabIndex={-1}
+      data-visible="false"
+      className="group pointer-events-none fixed end-[26px] bottom-[100px] z-40 grid size-[52px] translate-y-3 place-items-center rounded-full bg-white opacity-0 shadow-lift transition-[opacity,translate,scale] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-105 active:scale-95 data-[visible=true]:pointer-events-auto data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 print:hidden"
     >
       <svg viewBox="0 0 52 52" className="absolute inset-0 size-full -rotate-90" aria-hidden="true">
         <defs>
@@ -63,6 +75,7 @@ export function ScrollProgress() {
         </defs>
         <circle cx="26" cy="26" r={R} fill="none" stroke="#f2edf7" strokeWidth="3" />
         <circle
+          ref={ring}
           cx="26"
           cy="26"
           r={R}
@@ -71,12 +84,11 @@ export function ScrollProgress() {
           strokeWidth="3"
           strokeLinecap="round"
           strokeDasharray={C}
-          strokeDashoffset={C * (1 - pct / 100)}
-          className="transition-[stroke-dashoffset] duration-150 ease-out"
+          strokeDashoffset={C}
         />
       </svg>
-      <span className="relative text-[12px] font-bold text-plum tabular-nums transition-opacity duration-150 group-hover:opacity-0 group-focus-visible:opacity-0">
-        {pct}%
+      <span ref={label} className="relative text-[12px] font-bold text-plum tabular-nums transition-opacity duration-150 group-hover:opacity-0 group-focus-visible:opacity-0">
+        0%
       </span>
       <ArrowUp className="absolute size-5 text-aura opacity-0 transition-[opacity,translate] duration-200 group-hover:-translate-y-0.5 group-hover:opacity-100 group-focus-visible:opacity-100" />
     </button>
