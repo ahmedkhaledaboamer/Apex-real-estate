@@ -145,7 +145,11 @@ html {
   width: 132px;
   height: auto;
 }
-/* Logo and wordmark are shown complete from the first frame (no draw-in), then the whole overlay lifts away. */
+.preloader-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: preloader-draw 0.6s cubic-bezier(0.65, 0, 0.35, 1) 0.05s forwards;
+}
 .preloader-word {
   margin-top: 18px;
   font-family: var(--font-display);
@@ -153,6 +157,9 @@ html {
   font-weight: 600;
   letter-spacing: 0.02em;
   color: #fff;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: preloader-fade 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0.25s forwards;
 }
 .preloader-sub {
   margin-top: 6px;
@@ -160,6 +167,19 @@ html {
   font-weight: 500;
   letter-spacing: 0.3em;
   color: rgb(255 255 255 / 0.6);
+  opacity: 0;
+  animation: preloader-fade 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0.35s forwards;
+}
+@keyframes preloader-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes preloader-fade {
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 @keyframes preloader-lift {
   to {
