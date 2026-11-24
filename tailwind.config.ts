@@ -1,5 +1,5 @@
 /**
- * Apex Aura design tokens — brand colors, fonts, radii, shadows, easing.
+ * Apex Aora design tokens — brand colors, fonts, radii, shadows, easing.
  *
  * Tailwind v4 reads the live tokens from the `@theme` block in src/styles/index.css
  * (that is what generates bg-aura, text-plum, font-display, rounded-card, shadow-soft…).

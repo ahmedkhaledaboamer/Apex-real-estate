@@ -108,7 +108,7 @@ export function CommunityYieldTable({ sortable = false, className }: { sortable?
         </tbody>
       </table>
       <p className="border-t border-line/70 px-5 py-3 text-[12px] text-muted md:px-6">
-        Gross yields and prices from the Apex Aura data pack; rents are indicative annual figures. * Earlier snapshot. Past performance is not a guide to
+        Gross yields and prices from the Apex Aora data pack; rents are indicative annual figures. * Earlier snapshot. Past performance is not a guide to
         future returns.
       </p>
     </div>

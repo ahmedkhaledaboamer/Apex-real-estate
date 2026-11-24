@@ -1,7 +1,7 @@
-export const SITE_NAME = 'Apex Aura'
+export const SITE_NAME = 'Apex Aora'
 export const CONTACT_PHONE = '+971 4 000 0000'
 export const CONTACT_PHONE_HREF = 'tel:+97140000000'
-export const CONTACT_EMAIL = 'hello@apexaura.ae'
+export const CONTACT_EMAIL = 'hello@apexaora.ae'
 export const OFFICE_ADDRESS = 'Office 1204, Marina Plaza, Dubai Marina, Dubai, UAE'
 export const OFFICE_LOCATION = { lat: 25.0772, lng: 55.1393 }
 /** Opens the office pin in Google Maps. */

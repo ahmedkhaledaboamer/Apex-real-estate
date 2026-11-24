@@ -21,7 +21,7 @@ export function PropertyActions({ id, title }: { id: string; title: string }) {
     const url = window.location.href
     if (typeof navigator.share === 'function') {
       try {
-        await navigator.share({ title, text: `${title} — Apex Aura`, url })
+        await navigator.share({ title, text: `${title} — Apex Aora`, url })
         return
       } catch (e) {
         if ((e as Error).name === 'AbortError') return

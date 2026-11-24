@@ -30,10 +30,10 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'Apex Aura Real Estate · Dubai' },
-      { name: 'description', content: 'Apex Aura Real Estate — buy, rent and invest in Dubai with clear data and RERA-licensed advisers.' },
+      { title: 'Apex Aora Real Estate · Dubai' },
+      { name: 'description', content: 'Apex Aora Real Estate — buy, rent and invest in Dubai with clear data and RERA-licensed advisers.' },
       { name: 'theme-color', content: '#381a4c' },
-      { property: 'og:site_name', content: 'Apex Aura Real Estate' },
+      { property: 'og:site_name', content: 'Apex Aora Real Estate' },
       { property: 'og:type', content: 'website' },
     ],
     links: [

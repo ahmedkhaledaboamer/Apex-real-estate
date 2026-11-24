@@ -26,7 +26,7 @@ function readPrefs(): Prefs {
 const CATEGORIES: { key: 'essential' | keyof Prefs; title: string; body: string }[] = [
   { key: 'essential', title: 'Essential', body: 'Needed for the site to work: security, your currency and language choice, saved properties and this preference itself. Always on.' },
   { key: 'analytics', title: 'Analytics', body: 'Helps us understand which pages are used so we can improve them. Data is aggregated and not used to identify you.' },
-  { key: 'marketing', title: 'Marketing', body: 'Lets us measure our advertising and show relevant Apex Aura ads on other sites and social platforms.' },
+  { key: 'marketing', title: 'Marketing', body: 'Lets us measure our advertising and show relevant Apex Aora ads on other sites and social platforms.' },
 ]
 
 /** Cookie preference centre — saved to localStorage. */

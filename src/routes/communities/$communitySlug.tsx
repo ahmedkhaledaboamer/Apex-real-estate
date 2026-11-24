@@ -170,7 +170,7 @@ function Page() {
       <section className="bg-white py-16 md:py-24">
         <Container>
           <Reveal>
-            <SectionHead title="On the map" sub={`The heart of ${c.name}, with every live Apex Aura listing in the community.`} />
+            <SectionHead title="On the map" sub={`The heart of ${c.name}, with every live Apex Aora listing in the community.`} />
           </Reveal>
           <LocationMap markers={markers} className="h-[380px] md:h-[480px]" />
         </Container>

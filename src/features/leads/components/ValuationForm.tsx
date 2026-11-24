@@ -218,7 +218,7 @@ export function ValuationForm({
           </ButtonLink>
           <ButtonAnchor
             variant="whatsapp"
-            href={whatsappLink(WHATSAPP_NUMBER, `Hi Apex Aura, I just requested a valuation for ${values.building.trim()}, ${communityLabel(values)}.`)}
+            href={whatsappLink(WHATSAPP_NUMBER, `Hi Apex Aora, I just requested a valuation for ${values.building.trim()}, ${communityLabel(values)}.`)}
             target="_blank"
             rel="noreferrer"
           >

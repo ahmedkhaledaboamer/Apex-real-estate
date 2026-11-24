@@ -40,7 +40,7 @@ function Page() {
                   <Phone className="size-4" /> <span dir="ltr">{CONTACT_PHONE}</span>
                 </ButtonAnchor>
                 <ButtonAnchor
-                  href={whatsappLink(WHATSAPP_NUMBER, 'Hi Apex Aura, I would like a valuation for my property.')}
+                  href={whatsappLink(WHATSAPP_NUMBER, 'Hi Apex Aora, I would like a valuation for my property.')}
                   target="_blank"
                   rel="noreferrer"
                   variant="whatsapp"

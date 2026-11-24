@@ -43,7 +43,7 @@ export function FloatingExtras({ showCookieBanner }: { showCookieBanner: boolean
         href={WHATSAPP_URL}
         target="_blank"
         rel="noreferrer"
-        aria-label="Chat with Apex Aura on WhatsApp"
+        aria-label="Chat with Apex Aora on WhatsApp"
         className="bg-aura-gradient fixed end-5 bottom-5 z-40 grid size-16 place-items-center rounded-full p-[3px] shadow-glass transition-transform duration-150 hover:scale-105 active:scale-95"
       >
         <span className="grid size-full place-items-center rounded-full bg-[#1f9d55] text-white">

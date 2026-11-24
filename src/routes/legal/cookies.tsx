@@ -125,7 +125,7 @@ function Page() {
       sections={SECTIONS}
       intro={
         <p>
-          This policy explains how Apex Aura Real Estate LLC uses cookies and similar technologies on this website, and how you can control them. You can update
+          This policy explains how Apex Aora Real Estate LLC uses cookies and similar technologies on this website, and how you can control them. You can update
           your choices at any time in <a href="#manage">Manage preferences</a>.
         </p>
       }

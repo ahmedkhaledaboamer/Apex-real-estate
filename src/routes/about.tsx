@@ -14,7 +14,7 @@ import { AGENT_PROFILES } from '@/mocks/agents'
 import { seo } from '@/lib/seo'
 
 export const Route = createFileRoute('/about')({
-  head: () => seo({ title: "About us", description: "Apex Aura is a Dubai brokerage for buying, renting and investing — licensed advisers, clear data and no surprises at transfer." }), component: Page })
+  head: () => seo({ title: "About us", description: "Apex Aora is a Dubai brokerage for buying, renting and investing — licensed advisers, clear data and no surprises at transfer." }), component: Page })
 
 const DEALS = AGENT_PROFILES.reduce((n, a) => n + a.dealsClosed, 0)
 const YEARS = AGENT_PROFILES.reduce((n, a) => n + a.yearsExperience, 0)
@@ -46,7 +46,7 @@ function Page() {
     <>
       <PageHero
         image={IMG.marina}
-        title="About Apex Aura"
+        title="About Apex Aora"
         sub="A Dubai brokerage built on clear data, licensed advisers and no surprises at transfer."
         crumbs={[{ label: 'About us' }]}
       />
@@ -58,12 +58,12 @@ function Page() {
             <Reveal>
               <p className="text-[13px] font-semibold text-aura">Our story</p>
               <h2 className="mt-2 font-display text-[34px] leading-[1.05] font-semibold text-plum md:text-[44px]">
-                We started Apex Aura to make buying in Dubai feel straightforward.
+                We started Apex Aora to make buying in Dubai feel straightforward.
               </h2>
               <div className="mt-6 space-y-4 text-[15.5px] leading-relaxed text-muted">
                 <p>
                   Our founders spent years watching clients arrive at the trustee office surprised by fees nobody had mentioned, or holding listings that had
-                  been sold weeks earlier. Apex Aura was set up in Dubai Marina to do the opposite: show the real numbers, verify every listing and keep one
+                  been sold weeks earlier. Apex Aora was set up in Dubai Marina to do the opposite: show the real numbers, verify every listing and keep one
                   adviser with the client from first viewing to final transfer.
                 </p>
                 <p>
@@ -74,7 +74,7 @@ function Page() {
             </Reveal>
             <Reveal delay={0.05}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-[24px]">
-                <img decoding="async" src={IMG.living} srcSet={srcSetOf(IMG.living)} sizes="auto, (min-width: 1024px) 33vw, 100vw" alt="Apex Aura client lounge" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                <img decoding="async" src={IMG.living} srcSet={srcSetOf(IMG.living)} sizes="auto, (min-width: 1024px) 33vw, 100vw" alt="Apex Aora client lounge" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
               </div>
             </Reveal>
           </div>
@@ -82,7 +82,7 @@ function Page() {
       </section>
 
       {/* Numbers */}
-      <section aria-label="Apex Aura in numbers" className="border-y border-line/70 bg-white">
+      <section aria-label="Apex Aora in numbers" className="border-y border-line/70 bg-white">
         <Container className="py-10 md:py-12">
           <Reveal>
             <dl className="grid grid-cols-2 gap-y-8 lg:grid-cols-4 lg:divide-x lg:divide-line rtl:lg:divide-x-reverse">
@@ -190,7 +190,7 @@ function Page() {
               <span className="w-fit rounded-md bg-mist px-2.5 py-1 text-[12px] font-bold tracking-wide text-plum">RERA</span>
               <h2 className="mt-4 font-display text-[32px] leading-[1.05] font-semibold text-plum md:text-[40px]">Licences & compliance</h2>
               <p className="mt-3 text-[15px] leading-relaxed text-muted">
-                Apex Aura Real Estate LLC is licensed by the Dubai Land Department and regulated by the Real Estate Regulatory Agency (RERA).
+                Apex Aora Real Estate LLC is licensed by the Dubai Land Department and regulated by the Real Estate Regulatory Agency (RERA).
               </p>
             </div>
             <dl className="grid gap-4 sm:grid-cols-2">

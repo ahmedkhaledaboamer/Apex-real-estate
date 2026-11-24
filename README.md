@@ -1,6 +1,6 @@
-# Apex Aura Web
+# Apex Aora Web
 
-Apex Aura Real Estate — Dubai. React 18 + TanStack Start (static prerendering) + Vite + TypeScript + Tailwind CSS.
+Apex Aora Real Estate — Dubai. React 18 + TanStack Start (static prerendering) + Vite + TypeScript + Tailwind CSS.
 
 ## Getting started
 

@@ -11,7 +11,7 @@ export function AdviserBand({
   title,
   sub,
   submitLabel = 'Request a callback',
-  whatsappText = 'Hello Apex Aura, I would like investment advice.',
+  whatsappText = 'Hello Apex Aora, I would like investment advice.',
   topic,
 }: {
   title: React.ReactNode

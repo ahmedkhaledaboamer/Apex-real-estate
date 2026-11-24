@@ -5,7 +5,7 @@ import { CONTACT_EMAIL, OFFICE_ADDRESS } from '@/lib/constants'
 import { seo } from '@/lib/seo'
 
 export const Route = createFileRoute('/legal/terms')({
-  head: () => seo({ title: "Terms of use", description: "The terms that apply when you use the Apex Aura Real Estate website." }), component: Page })
+  head: () => seo({ title: "Terms of use", description: "The terms that apply when you use the Apex Aora Real Estate website." }), component: Page })
 
 const SECTIONS: LegalSection[] = [
   {
@@ -14,7 +14,7 @@ const SECTIONS: LegalSection[] = [
     content: (
       <>
         <p>
-          These terms govern your use of this website, operated by <strong>Apex Aura Real Estate LLC</strong>, a real estate brokerage licensed in Dubai
+          These terms govern your use of this website, operated by <strong>Apex Aora Real Estate LLC</strong>, a real estate brokerage licensed in Dubai
           (Trade Licence No. [Trade Licence No.]; RERA ORN [RERA ORN]), whose office is at {OFFICE_ADDRESS}.
         </p>
         <p>By using the website you accept these terms. If you do not agree, please do not use the website.</p>
@@ -89,7 +89,7 @@ const SECTIONS: LegalSection[] = [
     title: 'Intellectual property',
     content: (
       <p>
-        The Apex Aura name, logo, design, text, photography and software on this website are owned by or licensed to Apex Aura Real Estate LLC. You may view
+        The Apex Aora name, logo, design, text, photography and software on this website are owned by or licensed to Apex Aora Real Estate LLC. You may view
         and print pages for personal, non-commercial use. Any other use requires our prior written permission.
       </p>
     ),
@@ -110,7 +110,7 @@ const SECTIONS: LegalSection[] = [
     content: (
       <>
         <p>
-          To the fullest extent permitted by UAE law, Apex Aura is not liable for any indirect or consequential loss, or for any loss arising from reliance on
+          To the fullest extent permitted by UAE law, Apex Aora is not liable for any indirect or consequential loss, or for any loss arising from reliance on
           information on this website, including indicative estimates and calculator results.
         </p>
         <p>Nothing in these terms limits liability that cannot be limited under UAE law, including liability for fraud or gross negligence.</p>
@@ -170,7 +170,7 @@ function Page() {
     <LegalPage
       title="Terms of use"
       sections={SECTIONS}
-      intro={<p>Please read these terms carefully. They explain the rules for using the Apex Aura website and how our listings and tools should be relied on.</p>}
+      intro={<p>Please read these terms carefully. They explain the rules for using the Apex Aora website and how our listings and tools should be relied on.</p>}
     />
   )
 }

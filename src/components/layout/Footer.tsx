@@ -63,7 +63,7 @@ export function Footer() {
             <ul className="mt-6 space-y-2.5 text-[14px] text-white/80">
               <li className="flex items-start gap-2.5"><MapPin className="mt-0.5 size-4 shrink-0 text-white/50" /> Office 1204, Marina Plaza, Dubai Marina, Dubai, UAE</li>
               <li className="flex items-center gap-2.5"><Phone className="size-4 shrink-0 text-white/50" /> +971 4 000 0000</li>
-              <li className="flex items-center gap-2.5"><Mail className="size-4 shrink-0 text-white/50" /> hello@apexaura.ae</li>
+              <li className="flex items-center gap-2.5"><Mail className="size-4 shrink-0 text-white/50" /> hello@apexaora.ae</li>
             </ul>
 
             <form
@@ -109,7 +109,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col-reverse gap-4 border-t border-white/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[13px] text-white/55">© 2026 Apex Aura Real Estate LLC. All rights reserved.</p>
+          <p className="text-[13px] text-white/55">© 2026 Apex Aora Real Estate LLC. All rights reserved.</p>
           <ul className="flex gap-2">
             {[Instagram, Linkedin, Facebook, Youtube].map((Icon, i) => (
               <li key={i}>

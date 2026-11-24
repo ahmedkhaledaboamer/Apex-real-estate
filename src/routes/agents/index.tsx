@@ -50,7 +50,7 @@ function Page() {
     <>
       <PageHero
         title="Meet our agents"
-        sub="Every Apex Aura adviser is RERA-licensed. Find a specialist by area, language or what you need help with."
+        sub="Every Apex Aora adviser is RERA-licensed. Find a specialist by area, language or what you need help with."
         crumbs={[{ label: 'Agents' }]}
       >
         <a

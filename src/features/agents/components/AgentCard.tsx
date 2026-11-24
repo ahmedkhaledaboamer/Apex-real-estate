@@ -39,7 +39,7 @@ export function AgentCard({ agent: a, whatsappText }: { agent: AgentProfile; wha
       </ul>
       <div className="mt-auto flex flex-col gap-2 pt-4">
         <a
-          href={whatsappLink(a.whatsapp, whatsappText ?? `Hi ${first}, I found you on the Apex Aura website.`)}
+          href={whatsappLink(a.whatsapp, whatsappText ?? `Hi ${first}, I found you on the Apex Aora website.`)}
           target="_blank"
           rel="noreferrer"
           className="flex w-full items-center justify-center gap-2 rounded-full border border-line py-2.5 text-[14px] font-semibold text-plum transition-colors duration-150 hover:border-[#1f9d55] hover:bg-[#1f9d55] hover:text-white"

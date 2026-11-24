@@ -4,7 +4,7 @@
 @import 'tailwindcss';
 /* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
 
-/* Apex Aura design tokens — sampled from the logo (see data pack §2).
+/* Apex Aora design tokens — sampled from the logo (see data pack §2).
    Tailwind v4 reads them from this @theme block. Mirrored as typed values in tailwind.config.ts — keep both in sync. */
 @theme {
   --color-aura: #843f96;

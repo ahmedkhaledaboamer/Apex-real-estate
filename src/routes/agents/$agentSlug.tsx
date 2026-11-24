@@ -96,7 +96,7 @@ function Page() {
                 <ButtonAnchor href={`tel:${a.phone.replace(/\s/g, '')}`} variant="plum">
                   <Phone className="size-4" aria-hidden="true" /> Call {first}
                 </ButtonAnchor>
-                <ButtonAnchor href={whatsappLink(a.whatsapp, `Hi ${first}, I found your profile on the Apex Aura website.`)} target="_blank" rel="noreferrer" variant="whatsapp">
+                <ButtonAnchor href={whatsappLink(a.whatsapp, `Hi ${first}, I found your profile on the Apex Aora website.`)} target="_blank" rel="noreferrer" variant="whatsapp">
                   <WhatsAppIcon /> WhatsApp
                 </ButtonAnchor>
                 <ButtonAnchor href={`mailto:${a.email}`} variant="outline">

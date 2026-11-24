@@ -115,7 +115,7 @@ function Page() {
             Get a free valuation <ArrowRight className="size-4 rtl:rotate-180" />
           </ButtonLink>
           <ButtonAnchor
-            href={whatsappLink(WHATSAPP_NUMBER, 'Hi Apex Aura, I am thinking of selling my property.')}
+            href={whatsappLink(WHATSAPP_NUMBER, 'Hi Apex Aora, I am thinking of selling my property.')}
             target="_blank"
             rel="noreferrer"
             variant="whatsapp"
@@ -127,7 +127,7 @@ function Page() {
       </PageHero>
 
       {/* Numbers */}
-      <section aria-label="Apex Aura in numbers" className="border-b border-line/70 bg-white">
+      <section aria-label="Apex Aora in numbers" className="border-b border-line/70 bg-white">
         <Container className="py-10 md:py-12">
           <Reveal>
             <dl className="grid grid-cols-2 gap-y-8 lg:grid-cols-4 lg:divide-x lg:divide-line rtl:lg:divide-x-reverse">
@@ -147,7 +147,7 @@ function Page() {
       <section className="py-16 md:py-24">
         <Container>
           <Reveal>
-            <SectionHead title="Why sell with Apex Aura" sub="You get an honest price, serious buyers and a team that handles the paperwork so you don’t have to." />
+            <SectionHead title="Why sell with Apex Aora" sub="You get an honest price, serious buyers and a team that handles the paperwork so you don’t have to." />
           </Reveal>
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {BENEFITS.map((b, i) => (

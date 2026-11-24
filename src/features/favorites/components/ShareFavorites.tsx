@@ -21,7 +21,7 @@ export function ShareFavorites({ items }: { items: Listing[] }) {
     return () => window.clearTimeout(t)
   }, [copied])
 
-  const text = ['My saved properties on Apex Aura:', ...items.map((l, i) => `${i + 1}. ${l.title} (${l.community}) – ${listingUrl(l)}`)].join('\n')
+  const text = ['My saved properties on Apex Aora:', ...items.map((l, i) => `${i + 1}. ${l.title} (${l.community}) – ${listingUrl(l)}`)].join('\n')
 
   const copy = async () => {
     try {

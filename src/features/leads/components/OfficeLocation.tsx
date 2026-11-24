@@ -25,10 +25,10 @@ export function OfficeMap({ className }: { className?: string }) {
         {
           id: 'office',
           position: OFFICE_LOCATION,
-          label: 'Apex Aura',
+          label: 'Apex Aora',
           popup: (
             <span className="text-[13px]">
-              <strong className="block text-plum">Apex Aura Real Estate</strong>
+              <strong className="block text-plum">Apex Aora Real Estate</strong>
               {OFFICE_ADDRESS}
             </span>
           ),

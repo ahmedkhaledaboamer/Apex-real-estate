@@ -5,7 +5,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE, OFFICE_ADDRESS } from '@/lib/constants'
 import { seo } from '@/lib/seo'
 
 export const Route = createFileRoute('/legal/privacy')({
-  head: () => seo({ title: "Privacy policy", description: "How Apex Aura Real Estate collects, uses and protects your personal data under UAE law." }), component: Page })
+  head: () => seo({ title: "Privacy policy", description: "How Apex Aora Real Estate collects, uses and protects your personal data under UAE law." }), component: Page })
 
 const SECTIONS: LegalSection[] = [
   {
@@ -14,13 +14,13 @@ const SECTIONS: LegalSection[] = [
     content: (
       <>
         <p>
-          This website is operated by <strong>Apex Aura Real Estate LLC</strong> (“Apex Aura”, “we”, “us”), a real estate brokerage licensed in the Emirate of
+          This website is operated by <strong>Apex Aora Real Estate LLC</strong> (“Apex Aora”, “we”, “us”), a real estate brokerage licensed in the Emirate of
           Dubai under Trade Licence No. [Trade Licence No.] and registered with the Real Estate Regulatory Agency (RERA) under Office Registration Number (ORN)
           [RERA ORN].
         </p>
         <p>
           Our registered office is {OFFICE_ADDRESS}. For the purposes of the UAE Personal Data Protection Law, Federal Decree-Law No. 45 of 2021 (“PDPL”), Apex
-          Aura is the controller of the personal data described in this policy.
+          Aora is the controller of the personal data described in this policy.
         </p>
       </>
     ),
@@ -188,7 +188,7 @@ function Page() {
       sections={SECTIONS}
       intro={
         <p>
-          Your privacy matters to us. This policy explains what personal data Apex Aura collects when you use our website or services, why we collect it, how
+          Your privacy matters to us. This policy explains what personal data Apex Aora collects when you use our website or services, why we collect it, how
           we protect it and the choices you have.
         </p>
       }

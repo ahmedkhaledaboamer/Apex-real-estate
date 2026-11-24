@@ -56,7 +56,7 @@ function Page() {
               <p className="mt-4 text-[13.5px] text-muted">
                 Prefer chat?{' '}
                 <a
-                  href={whatsappLink(WHATSAPP_NUMBER, 'Hello Apex Aura, I have a question about buying costs.')}
+                  href={whatsappLink(WHATSAPP_NUMBER, 'Hello Apex Aora, I have a question about buying costs.')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-aura hover:text-plum"
