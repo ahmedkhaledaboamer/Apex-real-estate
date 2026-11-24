@@ -17,8 +17,6 @@ export function Preloader() {
             </linearGradient>
           </defs>
           <path
-            className="preloader-path"
-            pathLength={1}
             d="M200 90 C 160 40, 120 20, 90 20 C 45 20, 15 52, 15 90 C 15 128, 45 160, 90 160 C 120 160, 160 140, 200 90 C 240 40, 280 20, 310 20 C 355 20, 385 52, 385 90 C 385 128, 355 160, 310 160 C 280 160, 240 140, 200 90 Z"
             stroke="url(#preloader-grad)"
             strokeWidth={12}
