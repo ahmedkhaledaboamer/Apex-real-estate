@@ -48,19 +48,42 @@ export function HeroSection({ lang, onSearch }: { lang: Lang; onSearch?: () => v
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink/50 to-transparent" />
       </div>
 
-      <div className="mx-auto max-w-[1280px] px-5 pt-20 pb-16 md:px-8 md:pt-28 md:pb-24 lg:pt-32">
+      {/* Fills the first screen below the 108px header and centres the content vertically
+          (equal space above and below); grows naturally when the content is taller than the screen. */}
+      <div className="mx-auto flex min-h-[calc(100svh-108px)] max-w-[1280px] flex-col justify-center px-5 py-14 md:px-8 md:py-12">
         {/* CSS entrance (not JS) so the headline paints immediately, without waiting for the animation chunk. */}
-        <div className="animate-rise max-w-2xl">
-          <h1 className="font-display text-[52px] leading-[0.95] font-semibold text-white sm:text-[68px] lg:text-[88px]">
-            {lang === 'ar' ? 'جد مكانك في دبي.' : 'Find your place in Dubai.'}
+        <div className="animate-rise max-w-3xl">
+          {/* Eyebrow — same treatment as the "Strategic location" band, anchors the headline */}
+          <p className="flex items-center gap-3 text-[12px] font-semibold tracking-[0.28em] text-white/75 md:text-[13px]">
+            <span aria-hidden="true" className="h-px w-8 bg-cyan" />
+            {lang === 'ar' ? (
+              'عقارات دبي · مستشارون مرخّصون'
+            ) : (
+              <span>
+                DUBAI REAL ESTATE<span className="hidden sm:inline"> · RERA-LICENSED ADVISERS</span>
+              </span>
+            )}
+          </p>
+          {/* Two deliberate lines instead of an arbitrary wrap */}
+          <h1 className="mt-5 font-display text-[52px] leading-[0.98] font-semibold text-balance text-white sm:text-[68px] lg:text-[84px]">
+            {lang === 'ar' ? (
+              'جد مكانك في دبي.'
+            ) : (
+              <>
+                Find your place
+                <br className="hidden sm:block" /> in Dubai.
+              </>
+            )}
           </h1>
-          <p className="mt-5 max-w-md text-[17px] leading-relaxed text-white/85 md:text-lg">
-            {lang === 'ar' ? 'اشترِ واستأجر واستثمر بثقة.' : 'Buy, rent and invest with confidence.'}
+          <p className="mt-6 max-w-xl text-[18px] leading-relaxed text-pretty text-white/85 md:text-[20px]">
+            {lang === 'ar'
+              ? 'اشترِ واستأجر واستثمر بثقة — إعلانات موثّقة ومستشارون مرخّصون وأرقام واضحة.'
+              : 'Buy, rent and invest with confidence — verified listings, licensed advisers and clear numbers.'}
           </p>
         </div>
 
         {/* Glass search */}
-        <div className="animate-rise mt-10 max-w-[1040px] [animation-delay:80ms] md:mt-14">
+        <div className="animate-rise mt-10 max-w-[1040px] [animation-delay:80ms] md:mt-12">
           <div role="tablist" aria-label="Search type" className="inline-flex rounded-t-2xl border border-b-0 border-white/25 bg-white/15 p-1 backdrop-blur-xl">
             {TABS.map((t) => (
               <button
