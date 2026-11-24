@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "buy": "Buy",
+    "rent": "Rent",
+    "offplan": "Off-Plan",
+    "communities": "Communities",
+    "developers": "Developers",
+    "sell": "Sell",
+    "invest": "Invest",
+    "insights": "Insights",
+    "about": "About",
+    "contact": "Contact"
+  }
+}
