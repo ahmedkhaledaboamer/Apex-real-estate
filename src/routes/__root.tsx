@@ -5,9 +5,13 @@ import { LazyMotion } from 'framer-motion'
 import { Provider as ReduxProvider } from 'react-redux'
 
 import { queryClient } from '@/api/queryClient'
+import { CustomCursor } from '@/components/layout/CustomCursor'
 import { FloatingExtras } from '@/components/layout/FloatingExtras'
 import { Footer } from '@/components/layout/Footer'
 import { Header } from '@/components/layout/Header'
+import { Preloader } from '@/components/layout/Preloader'
+import { ScrollProgress } from '@/components/layout/ScrollProgress'
+import { SmoothScroll } from '@/components/layout/SmoothScroll'
 import { ButtonLink } from '@/components/ui/Button'
 import { Container } from '@/components/ui/misc'
 import { CompareBar } from '@/features/favorites/components/CompareBar'
@@ -68,6 +72,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <Preloader />
         <ReduxProvider store={store}>
           <QueryClientProvider client={queryClient}>
             <LazyMotion features={loadMotionFeatures} strict>
@@ -108,6 +113,9 @@ function RootLayout() {
       <Footer />
       <FloatingExtras showCookieBanner={showCookieBanner} />
       <CompareBar />
+      <ScrollProgress />
+      <SmoothScroll />
+      <CustomCursor />
     </div>
   )
 }
